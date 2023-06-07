@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker'
+import Image from "next/image";
 
-const PromptOutput = ({ prompt }: { prompt: string }) => {
+const DemoOutput = ({ prompt }: { prompt: string }) => {
     const getPeopleFromFakeApi = () => {
         faker.seed(123)
 
@@ -13,7 +14,7 @@ const PromptOutput = ({ prompt }: { prompt: string }) => {
     }
 
     return (
-        <div className="mt-10">
+        <div className="mt-10 flex gap-4 flex-col">
             {
                 getPeopleFromFakeApi()
                     .filter((person) => {
@@ -26,11 +27,14 @@ const PromptOutput = ({ prompt }: { prompt: string }) => {
                         }
                     })
                     .map((person) => (
-                        <div className="flex flex-row items-center justify-between">
-                            <div className="flex flex-row items-center">
-                                <img
+                        <div className="flex flex-row items-center justify-between" key={person.phone}>
+                            <div className="flex flex-row items-center gap-2">
+                                <Image
                                     src={person.image}
-                                    className="w-10 h-10 rounded-full"
+                                    className="rounded-full"
+                                    width={36}
+                                    height={36}
+                                    alt="face"
                                 />
                                 <div className="flex flex-col ml-2">
                                     <span className="text-sm font-bold">{person.name}</span>
@@ -50,4 +54,4 @@ const PromptOutput = ({ prompt }: { prompt: string }) => {
         </div>
     )
 }
-export default PromptOutput
+export default DemoOutput

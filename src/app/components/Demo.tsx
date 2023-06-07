@@ -1,9 +1,9 @@
 'use client'
-import PromptInput from "@/app/components/PromptInput";
-import PromptOutput from "@/app/components/PromptOutput";
+import DemoInput from "@/app/components/DemoInput";
+import DemoOutput from "@/app/components/DemoOutput";
 import {useState} from "react";
 
-const Prompt = () => {
+const Demo = () => {
     const [prompt, setPrompt] = useState<string>('')
     const handleSubmit = (prompt: string) => {
         // Handle the submitted data here
@@ -12,10 +12,10 @@ const Prompt = () => {
 
     return (
         <div>
-            <PromptInput submit={handleSubmit} />
-            <PromptOutput prompt={prompt ?? ''} />
+            <DemoInput submit={handleSubmit} />
+            <DemoOutput prompt={prompt ?? ''} />
         </div>
     )
 }
 
-export default Prompt
+export default Demo
