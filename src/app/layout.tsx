@@ -3,7 +3,7 @@ import React from "react";
 
 export const metadata = {
   title: 'React Server Components',
-  description: 'React Server Components Demonstration',
+  description: 'Framer Motion Demonstration',
 }
 
 export default function RootLayout({

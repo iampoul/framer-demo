@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['avatars.githubusercontent.com','cloudflare-ipfs.com'],
+    domains: ['avatars.githubusercontent.com','cloudflare-ipfs.com','shop.sport24.dk'],
   }
 }
 
