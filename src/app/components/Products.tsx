@@ -60,16 +60,18 @@ const Products = () => {
                 layout
             >
                 <div className="flex flex-row gap-5">
-                    {getProductsFromFakeApi().map((item) => (
+                    {getProductsFromFakeApi().map((_item) => (
                         <Card
-                            key={item.id}
-                            title={item.title}
-                            subtitle={item.subtitle}
-                            price={item.price}
-                            id={item.id}
-                            image_url={item.image_url}
+                            key={_item.id}
+                            title={_item.title}
+                            subtitle={_item.subtitle}
+                            price={_item.price}
+                            id={_item.id}
+                            image_url={_item.image_url}
                             onClick={() => {
-                                setItem(item)
+                                item?.id === _item.id
+                                    ? setItem(null)
+                                    : setItem(_item)
                             }}
                             className="cursor-pointer w-1/3"
                         />
